@@ -6,65 +6,65 @@ const workoutSchema = new mongoose.Schema ({
     bodyparts: [String],
     numOfExercises: Number,
     exercises: [{
-        excercise1: [{
+        exercise1: [{
             name: {type: String, required: true},
             sets: String,
             reps: String,
-            equipment: String
+            equipment: [String]
         }],
-        excercise2: [{
+        exercise2: [{
             name: {type: String, required: true},
             sets: String,
             reps: String,
-            equipment: String
+            equipment: [String]
         }],
-        excercise3: [{
+        exercise3: [{
             name: {type: String, required: true},
             sets: String,
             reps: String,
-            equipment: String
+            equipment: [String]
         }],
-        excercise4: [{
+        exercise4: [{
             name: {type: String, required: true},
             sets: String,
             reps: String,
-            equipment: String
+            equipment: [String]
         }],
-        excercise5: [{
+        exercise5: [{
             name: {type: String, required: true},
             sets: String,
             reps: String,
-            equipment: String
+            equipment: [String]
         }],
-        excercise6: [{
+        exercise6: [{
             name: {type: String, required: true},
             sets: String,
             reps: String,
-            equipment: String
+            equipment: [String]
         }],
-        excercise7: [{
+        exercise7: [{
             name: {type: String, required: true},
             sets: String,
             reps: String,
-            equipment: String
+            equipment: [String]
         }],
-        excercise8: [{
+        exercise8: [{
             name: {type: String, required: true},
             sets: String,
             reps: String,
-            equipment: String
+            equipment: [String]
         }],
-        excercise9: [{
+        exercise9: [{
             name: {type: String, required: true},
             sets: String,
             reps: String,
-            equipment: String
+            equipment: [String]
         }],
-        excercise10: [{
+        exercise10: [{
             name: {type: String, required: true},
             sets: String,
             reps: String,
-            equipment: String
+            equipment: [String]
         }],
     }],
     description: {type: String},
