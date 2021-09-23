@@ -6,19 +6,19 @@ const Workouts = require('../models/workouts')
 
 
 router.get('/', (req, res) => {
-    res.send('Index connection made')
+    res.render('index.ejs')
 })
 
 router.get('/new', (req, res) => {
-    res.send('New Route')
+    res.render('new.ejs')
 })
 
 router.get('/:id', (req, res) => {
-    res.send('Show page')
+    res.render('show.ejs')
 })
 
 router.get('/:id/edit', (req, res) => {
-    res.send('Edit Page')
+    res.render('edit.ejs')
 })
 
 
