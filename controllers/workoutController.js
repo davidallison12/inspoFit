@@ -31,38 +31,7 @@ router.get('/seed', async (req, res) => {
         level: 'Beginner',
         bodyparts: ['chest, back'],
         numOfExercises: 5,
-        exercises: [{
-            exercise1: {
-            name: 'Bench Press',
-            sets: '3-5',
-            reps: '12-15',
-            equipment:['barbell bench', 'barbell']
-            }, 
-            exercise2:{
-                name: 'Lat Pulldown',
-                sets: '3',
-                reps: '15',
-                equipment:['lat pulldown machine']
-            }, 
-            exercise3:{
-                name: 'Hammer Smith Incline Press',
-                sets: '3',
-                reps: '12',
-                equipment:['Hammer Smith Incline Press Machine']
-            }, 
-            exercise4:{
-                name: 'Pendlay Row',
-                sets: '3',
-                reps: '8',
-                equipment:['barbell']
-            }, 
-            exercise5:{
-                name: 'Low High Cable Flyes',
-                sets: '3',
-                reps: '15',
-                equipment:['Pulley Cables']
-            }
-        }],
+        exercises: ['Bench Press', 'Lat Pulldown', 'Hammer Smith Incline Press', 'Pendlay Rows', 'Low-High Cable Flyes'],
         description: 'Heavy compound movement day involving back and chest',
         tips: `Don't die` 
     }, {
@@ -70,38 +39,7 @@ router.get('/seed', async (req, res) => {
         level: 'Intermediate',
         bodyparts: ['shoulder, arms'],
         numOfExercises: 5,
-        exercises: [{
-            exercise1: {
-            name: 'Standing Shoulder Press',
-            sets: '3',
-            reps: '8',
-            equipment:['barbell']
-            }, 
-            exercise2: {
-                name: 'Standing Bicep Curl(superset)',
-                sets: '3',
-                reps: '15(for each set)',
-                equipment:['dumbbells', 'E-Z bar']
-            }, 
-            exercise3: {
-                name: 'Dumbbell Skullcrushers(superset)',
-                sets: '3',
-                reps: '12',
-                equipment:['dumbbells']
-            }, 
-            exercise4: {
-                name: 'Side Lateral Raise(superset)',
-                sets: '3',
-                reps: '15',
-                equipment:['dumbbells']
-            }, 
-            exercise5:{
-                name: 'Hammer Curls',
-                sets: '3',
-                reps: '12',
-                equipment:['dumbbells']
-            }
-        }],
+        exercises: ['Standing Shoulder Press', 'Standing Bicep Curls', 'Dumbbell Skullcrushers', 'Side Lateral Raise'],
         description: 'Heavy compound movement day involving the gunz',
         tips: `Embrace the pain` 
     }, {
@@ -109,38 +47,7 @@ router.get('/seed', async (req, res) => {
         level: 'Intermediate',
         bodyparts: ['chest, back'],
         numOfExercises: 5,
-        exercises: [{
-            exercise1: {
-            name: 'Squats',
-            sets: '5',
-            reps: '3',
-            equipment:['barbell']
-            }, 
-            exercise2: {
-                name: 'Romanian Deadlifts',
-                sets: '3',
-                reps: '8',
-                equipment:['barbell']
-            }, 
-            exercise3: {
-                name: 'Box Squats',
-                sets: '3',
-                reps: '6',
-                equipment:['box', 'barbell']
-            }, 
-            exercise4: {
-                name: 'Single-Leg Deficit Squats',
-                sets: '3',
-                reps: '12',
-                equipment:['box', 'dumbbell', 'kettlebell']
-            }, 
-            exercise5: {
-                name: 'Suitcase Carries',
-                sets: '3',
-                reps: '30',
-                equipment:['kettlebell']
-            }
-        }],
+        exercises: ['Squats', 'Romanian Deadlifts', 'Box Squats', 'Deficit Squats', 'Suitcase Carries'],
         description: 'Heavy compound movement day involving legs and core',
         tips: `Have fun...` 
     },{
@@ -148,38 +55,7 @@ router.get('/seed', async (req, res) => {
         level: 'Intermediate',
         bodyparts: ['shoulders, arms'],
         numOfExercises: 5,
-        exercises: [{
-            exercise1: {
-            name: 'Viking Press',
-            sets: '3',
-            reps: '8',
-            equipment:['barbell']
-            }, 
-            exercise2: {
-                name: 'Preacher Curls (superset)',
-                sets: '3',
-                reps: '15',
-                equipment:['preacher curl machine']
-            }, 
-            exercise3: {
-                name: 'Close-Grip Bench Press',
-                sets: '3',
-                reps: '8',
-                equipment:['barbell bench', 'barbell']
-            }, 
-            exercise4: {
-                name: 'Seated Alternating Shoulder Press',
-                sets: '3',
-                reps: '12',
-                equipment:['dumbbell']
-            }, 
-            exercise5: {
-                name: 'Reverse Grip Bicep Curls',
-                sets: '3',
-                reps: '30',
-                equipment:['E-Z bar']
-            }
-        }],
+        exercises: ['Viking Press', 'Preacher Curl', 'Close-Grip Bench Press', 'Alternating Shoulder Press', 'Reverse Bicep Curls'],
         description: 'Heavy compound movement day involving shoulders and arms. Prepare to show those god-like arms.',
         tips: `Let your inner Viking come roar` 
     }
