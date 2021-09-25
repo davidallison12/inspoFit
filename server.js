@@ -15,11 +15,8 @@ const PORT = 3000
 
 
 
-
-
-
 //=================
-// MIDDLEWARE
+// DATABASE SETUP
 //=================
 const mongoURI = 'mongodb://127.0.0.1:27017/inspoFit'
 const db = mongoose.connection
@@ -35,6 +32,11 @@ db.on('error', err => {console.log('ERROR: ', err)})
 db.on('connected', () => {console.log('mongo connected')})
 db.on('disconnected', () => {console.log('mongo disconnected')})
 
+//=================
+// MIDDLEWARE
+//=================
+app.use(express.urlencoded({extended: true})) // Body-Parser
+app.use(express.static('public')) // Public Folder Connection
 
 
 //=================

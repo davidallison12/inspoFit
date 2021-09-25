@@ -2,7 +2,75 @@
 
 <h1>This is the New page.</h1>
 
-
+<div class="row">
+    <form class="col s12" action='/workouts' method="POST">
+        <div class="row">
+            <div class="input-field col s6">
+                <input placeholder="Workout Name" name="name" id="name" type="text" class="validate">
+                <label for="name" class="active" >Workout Name</label>
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="input-field col s6">
+                <select name="level">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+                <label for="level" class="active" >Level</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <select multiple name="bodyparts">
+                    <option value="" disabled selected>Choose bodyparts used</option>
+                    <option value="arms">Arms</option>
+                    <option value="trapezius">Traps</option>
+                    <option value="shoulders">Shoulders</option>
+                    <option value="chest">Chest</option>
+                    <option value="back">Back</option>
+                    <option value="lats">Lats</option>
+                    <option value="abs/core">Abs/Core</option>
+                    <option value="quadriceps">Quads</option>
+                    <option value="glutes">Glutes</option>
+                    <option value="hamstrings">Hamstrings</option>
+                    <option value="calves">Calves</option>
+                </select>
+                <label for="bodyparts" class="active" >Bodyparts</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input placeholder="# of exercises" id="numOfExercises" name='numOfExercises' type="number">
+                <label for="numOfExercises" class="active">Number of Exercises</label>
+            </div>
+        </div>
+        <!-- EXERCISES GO HERE  -->
+        <div class="row">
+            <div class="input-field col s12">
+                <input placeholder="Exercises" id="exercises" name='exercises' type="text">
+                <label for="Exercises" class="active">Exercises</label>
+            </div>
+        </div>
+     
+        <div class="row">
+            <div class="input-field col s12">
+                <input placeholder="This workout is ...." id="description" name='description' type="text">
+                <label for="description" class="active">Description</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input placeholder="What tips do you have?" id="tips" name='tips' type="text">
+                <label for="tips" class="active">Any Tips?</label>
+            </div>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit">Create Product
+            <i class="material-icons right">add</i>
+        </button>            
+        </form>
+    </div>
 
 
 

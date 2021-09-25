@@ -195,6 +195,12 @@ router.get('/:id/edit', (req, res) => {
     res.render('edit.ejs')
 })
 
+router.post('/', (req, res) => {
+    Workout.create(req.body, (err, createdWorkout) => {
+        err ? res.send(err): res.redirect('/workouts')
+    })
+})
+
 
 
 module.exports = router
