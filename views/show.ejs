@@ -1,6 +1,24 @@
 <%- include('./partials/header.ejs') %> 
 
-<h1>This is the Show page.</h1>
+<h1><%= workout.name %> </h1>
+<h3>Level: <span><%= workout.level.replace(workout.level[0], workout.level[0].toUpperCase()) %> </span></h3>
+
+<h3>Bodyparts Used: </h3>
+<ul>
+    <%workout.bodyparts.forEach(part => { %>
+        <li><%= part %> </li>
+        <% })  %> 
+</ul>
+
+<p><%= workout.description %> </p>
+
+<p><%= workout.tips %> </p>
+
+<form action="/workouts/<%= workout.id %>?_method=DELETE" method="POST">
+    <button class="waves-effect waves-light btn-small"><i class="material-icons right">delete</i>Delete Workout</button>
+</form>
+
+<a href="/workouts/<%= workout.id %>/edit "class="waves-effect waves-light btn-small"><i class="material-icons right">edit</i>Edit Workout</a>
 
 
 

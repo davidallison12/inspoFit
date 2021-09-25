@@ -197,7 +197,7 @@ router.get('/seed', async (req, res) => {
 router.get('/:id', (req, res) => {
 
     Workout.findById(req.params.id, (err, foundWorkout) => {
-        res.send(foundWorkout)
+        res.render('show.ejs', {workout:foundWorkout})
     })
     // res.render('show.ejs')
 })
