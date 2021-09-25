@@ -1,4 +1,5 @@
 const express = require('express')
+const { findByIdAndDelete } = require('../models/workouts')
 const router = express.Router()
 
 // requiring Workouts models 
@@ -11,10 +12,18 @@ router.get('/', (req, res) => {
     })
 })
 
+// NEW ROUTE + POST FOR NEW
 router.get('/new', (req, res) => {
     res.render('new.ejs')
 })
 
+router.post('/', (req, res) => {
+    Workout.create(req.body, (err, createdWorkout) => {
+        err ? res.send(err): res.redirect('/workouts')
+    })
+})
+
+// SEED DATA
 router.get('/seed', async (req, res) => {
     const newWorkouts = [
     {
@@ -183,6 +192,8 @@ router.get('/seed', async (req, res) => {
     }
 })
 
+
+// SHOW ROUTE
 router.get('/:id', (req, res) => {
 
     Workout.findById(req.params.id, (err, foundWorkout) => {
@@ -191,13 +202,17 @@ router.get('/:id', (req, res) => {
     // res.render('show.ejs')
 })
 
+
+// EDIT ROUTE
 router.get('/:id/edit', (req, res) => {
     res.render('edit.ejs')
 })
 
-router.post('/', (req, res) => {
-    Workout.create(req.body, (err, createdWorkout) => {
-        err ? res.send(err): res.redirect('/workouts')
+
+// DELETE ROUTE
+router.delete('/:id', (req, res) => {
+    Workout.findByIdAndDelete(req.params.id, (err, foundWorkout) => {
+        err ? console.log(err) : res.redirect('/workouts')
     })
 })
 
