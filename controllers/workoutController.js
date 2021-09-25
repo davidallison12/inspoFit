@@ -6,7 +6,9 @@ const Workout = require('../models/workouts')
 
 
 router.get('/', (req, res) => {
-    res.render('index.ejs')
+    Workout.find({}, (err, allWorkouts) => {
+        res.render('index.ejs', {workouts: allWorkouts})
+    })
 })
 
 router.get('/new', (req, res) => {
@@ -70,7 +72,7 @@ router.get('/seed', async (req, res) => {
                 name: 'Standing Bicep Curl(superset)',
                 sets: '3',
                 reps: '15(for each set)',
-                equipment:['dumbells', 'E-Z bar']
+                equipment:['dumbbells', 'E-Z bar']
             }, 
             exercise3: {
                 name: 'Dumbbell Skullcrushers(superset)',
@@ -88,7 +90,7 @@ router.get('/seed', async (req, res) => {
                 name: 'Hammer Curls',
                 sets: '3',
                 reps: '12',
-                equipment:['dumbells']
+                equipment:['dumbbells']
             }
         }],
         description: 'Heavy compound movement day involving the gunz',
@@ -121,7 +123,7 @@ router.get('/seed', async (req, res) => {
                 name: 'Single-Leg Deficit Squats',
                 sets: '3',
                 reps: '12',
-                equipment:['box', 'dumbell', 'kettlebell']
+                equipment:['box', 'dumbbell', 'kettlebell']
             }, 
             exercise5: {
                 name: 'Suitcase Carries',
@@ -132,6 +134,45 @@ router.get('/seed', async (req, res) => {
         }],
         description: 'Heavy compound movement day involving legs and core',
         tips: `Have fun...` 
+    },{
+        name: 'Lifeblood of Thor',
+        level: 'Intermediate',
+        bodyparts: ['shoulders, arms'],
+        numOfExercises: 5,
+        exercises: [{
+            exercise1: {
+            name: 'Viking Press',
+            sets: '3',
+            reps: '8',
+            equipment:['barbell']
+            }, 
+            exercise2: {
+                name: 'Preacher Curls (superset)',
+                sets: '3',
+                reps: '15',
+                equipment:['preacher curl machine']
+            }, 
+            exercise3: {
+                name: 'Close-Grip Bench Press',
+                sets: '3',
+                reps: '8',
+                equipment:['barbell bench', 'barbell']
+            }, 
+            exercise4: {
+                name: 'Seated Alternating Shoulder Press',
+                sets: '3',
+                reps: '12',
+                equipment:['dumbbell']
+            }, 
+            exercise5: {
+                name: 'Reverse Grip Bicep Curls',
+                sets: '3',
+                reps: '30',
+                equipment:['E-Z bar']
+            }
+        }],
+        description: 'Heavy compound movement day involving shoulders and arms. Prepare to show those god-like arms.',
+        tips: `Let your inner Viking come roar` 
     }
     ]
     try {
@@ -143,7 +184,11 @@ router.get('/seed', async (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-    res.render('show.ejs')
+
+    Workout.findById(req.params.id, (err, foundWorkout) => {
+        res.send(foundWorkout)
+    })
+    // res.render('show.ejs')
 })
 
 router.get('/:id/edit', (req, res) => {
