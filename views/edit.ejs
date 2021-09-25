@@ -4,20 +4,34 @@
 
 
 <div class="row">
-    <form class="col s12" action='/workouts' method="POST">
+    <form class="col s12" action='/workouts/<%= workout.id %>?_method=PUT' method="POST">
         <div class="row">
             <div class="input-field col s6">
-                <input placeholder="Workout Name" name="name" id="name" type="text" class="validate">
+                <input value="<%= workout.name %>" name="name" id="name" type="text" class="validate">
                 <label for="name" class="active" >Workout Name</label>
             </div>
         </div>
         <div class="row"> 
             <div class="input-field col s6">
                 <select name="level">
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="beginner">Beginner</option>
+                <% if (workout.level.toLowerCase() === "beginner") { %> 
+                    <option value="" disabled >Choose your option</option>
+                    <option selected value="beginner">Beginner</option>
                     <option value="intermediate">Intermediate</option>
                     <option value="advanced">Advanced</option>
+
+                <%  } else if (workout.level.toLowerCase() === "intermediate"){ %>
+                <option value="" disabled >Choose your option</option>
+                    <option value="beginner">Beginner</option>
+                    <option selected value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+
+                <% } else if (workout.level.toLowerCase() === "advances") { %> 
+                    <option value="" disabled >Choose your option</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option selected value="advanced">Advanced</option>
+                    <% } %> 
                 </select>
                 <label for="level" class="active" >Level</label>
             </div>
@@ -43,32 +57,32 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input placeholder="# of exercises" id="numOfExercises" name='numOfExercises' type="number">
+                <input value="<%= workout.numOfExercises %> " id="numOfExercises" name='numOfExercises' type="text">
                 <label for="numOfExercises" class="active">Number of Exercises</label>
             </div>
         </div>
         <!-- EXERCISES GO HERE  -->
         <div class="row">
             <div class="input-field col s12">
-                <input placeholder="Exercises" id="exercises" name='exercises' type="text">
+                <input value="<%= workout.exercises %> " id="exercises" name='exercises' type="text">
                 <label for="Exercises" class="active">Exercises</label>
             </div>
         </div>
      
         <div class="row">
             <div class="input-field col s12">
-                <input placeholder="This workout is ...." id="description" name='description' type="text">
+                <input value="<%= workout.description %> " id="description" name='description' type="text">
                 <label for="description" class="active">Description</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input placeholder="What tips do you have?" id="tips" name='tips' type="text">
+                <input value="<%= workout.tips %> " id="tips" name='tips' type="text">
                 <label for="tips" class="active">Any Tips?</label>
             </div>
         </div>
-        <button class="btn waves-effect waves-light" type="submit">Create Product
-            <i class="material-icons right">add</i>
+        <button class="btn waves-effect waves-light" type="submit">Edit Workout
+            <i class="material-icons right">edit</i>
         </button>            
         </form>
     </div>
