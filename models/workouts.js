@@ -5,67 +5,75 @@ const workoutSchema = new mongoose.Schema ({
     level: {type: String},
     bodyparts: [String],
     numOfExercises: Number,
-    exercises: [{
-        exercise1: [{
-            name: {type: String, required: true},
-            sets: String,
-            reps: String,
-            equipment: [String]
-        }],
-        exercise2: [{
-            name: {type: String, required: true},
-            sets: String,
-            reps: String,
-            equipment: [String]
-        }],
-        exercise3: [{
-            name: {type: String, required: true},
-            sets: String,
-            reps: String,
-            equipment: [String]
-        }],
-        exercise4: [{
-            name: {type: String, required: true},
-            sets: String,
-            reps: String,
-            equipment: [String]
-        }],
-        exercise5: [{
-            name: {type: String, required: true},
-            sets: String,
-            reps: String,
-            equipment: [String]
-        }],
-        exercise6: [{
-            name: {type: String, required: true},
-            sets: String,
-            reps: String,
-            equipment: [String]
-        }],
-        exercise7: [{
-            name: {type: String, required: true},
-            sets: String,
-            reps: String,
-            equipment: [String]
-        }],
-        exercise8: [{
-            name: {type: String, required: true},
-            sets: String,
-            reps: String,
-            equipment: [String]
-        }],
-        exercise9: [{
-            name: {type: String, required: true},
-            sets: String,
-            reps: String,
-            equipment: [String]
-        }],
-        exercise10: [{
-            name: {type: String, required: true},
-            sets: String,
-            reps: String,
-            equipment: [String]
-        }],
+    exercise1: [{
+        name: {type: String, required: true},
+        sets: {type: String},
+        reps: {type: String},
+        equipment: [String],
+        isSuperset: {type: Boolean, default: false}
+    }],
+    exercise2: [{
+        name: {type: String, required: true},
+        sets: {type: String},
+        reps: {type: String},
+        equipment: [String],
+        isSuperset: {type: Boolean, default: false}
+    }],
+    exercise3: [{
+        name: {type: String, required: true},
+        sets: {type: String},
+        reps: {type: String},
+        equipment: [String],
+        isSuperset: {type: Boolean, default: false}
+    }],
+    exercise4: [{
+        name: {type: String, required: true},
+        sets: {type: String},
+        reps: {type: String},
+        equipment: [String],
+        isSuperset: {type: Boolean, default: false}
+    }],
+    exercise5: [{
+        name: {type: String, required: true},
+        sets: {type: String},
+        reps: {type: String},
+        equipment: [String],
+        isSuperset: {type: Boolean, default: false}
+    }],
+    exercise6: [{
+        name: {type: String, required: true},
+        sets: {type: String},
+        reps: {type: String},
+        equipment: [String],
+        isSuperset: {type: Boolean, default: false}
+    }],
+    exercise7: [{
+        name: {type: String, required: true},
+        sets: {type: String},
+        reps: {type: String},
+        equipment: [String],
+        isSuperset: {type: Boolean, default: false}
+    }],
+    exercise8: [{
+        name: {type: String, required: true},
+        sets: {type: String},
+        reps: {type: String},
+        equipment: [String],
+        isSuperset: {type: Boolean, default: false}
+    }],
+    exercise9: [{
+        name: {type: String, required: true},
+        sets: {type: String},
+        reps: {type: String},
+        equipment: [String],
+        isSuperset: {type: Boolean, default: false}
+    }],
+    exercise10: [{
+        name: {type: String, required: true},
+        sets: {type: String},
+        reps: {type: String},
+        equipment: [String],
+        isSuperset: {type: Boolean, default: false}
     }],
     description: {type: String},
     tips: {type: String}
