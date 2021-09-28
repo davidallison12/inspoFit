@@ -1,5 +1,4 @@
 const express = require('express')
-const { findByIdAndDelete, findByIdAndUpdate } = require('../models/workouts')
 const router = express.Router()
 
 // requiring Workouts models 
@@ -75,14 +74,13 @@ router.get('/:id', (req, res) => {
     Workout.findById(req.params.id, (err, foundWorkout) => {
         res.render('show.ejs', {workout:foundWorkout})
     })
-    // res.render('show.ejs')
 })
 
 
 // EDIT ROUTE
 router.get('/:id/edit', (req, res) => {
     Workout.findById(req.params.id, (err, foundWorkout) => {
-        err ? console.log(err) : res.render('edit.ejs', {workout: foundWorkout})
+        err ? console.log(err) : res.render('workouts/edit.ejs', {workout: foundWorkout})
     })
 })
 
