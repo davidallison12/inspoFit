@@ -30,6 +30,12 @@ router.get('/new', (req, res) => {
     res.send('This is the new route.')
 })
 
+router.post('/', (req, res) => {
+    Exercise.create(req.body, (err, createdExercise) => {
+        err ? console.log(err) : console.log('You hit the post route.')
+    })
+})
+
 
 // Edit
 router.get('/:id/edit', (req, res) => {

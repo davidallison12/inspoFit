@@ -7,13 +7,13 @@ const Workout = require('../models/workouts')
 
 router.get('/', (req, res) => {
     Workout.find({}, (err, allWorkouts) => {
-        res.render('index.ejs', {workouts: allWorkouts})
+        res.render('workouts/index.ejs', {workouts: allWorkouts})
     })
 })
 
 // NEW ROUTE + POST FOR NEW
 router.get('/new', (req, res) => {
-    res.render('new.ejs')
+    res.render('workouts/new.ejs')
 })
 
 router.post('/', (req, res) => {
@@ -72,7 +72,7 @@ router.get('/seed', async (req, res) => {
 router.get('/:id', (req, res) => {
 
     Workout.findById(req.params.id, (err, foundWorkout) => {
-        res.render('show.ejs', {workout:foundWorkout})
+        res.render('workouts/show.ejs', {workout:foundWorkout})
     })
 })
 
