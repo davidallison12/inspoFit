@@ -1,0 +1,62 @@
+<%- include('../partials/header.ejs') %> 
+
+<h1>This is the New Exercise page.</h1>
+
+<div class="row">
+    <form class="col s12" action='/exercises' method="POST">
+        <div class="row">
+            <div class="input-field col s6">
+                <input placeholder="Workout Name" name="name" id="name" type="text" class="validate">
+                <label for="name" class="active" >Exercise Name</label>
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="input-field col s6">
+                <input placeholder="# of Sets" name="sets" id="sets" type="text" class="validate">
+                <label for="name" class="active" ># of Sets</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input placeholder="# of Reps" name="reps" id="reps" type="text" class="validate">
+                <label for="name" class="active" ># of Reps</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input placeholder="Equipment" name="equipment" id="equipment" type="text" class="validate">
+                <label for="name" class="active" >Equipment</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <input placeholder="Exercises" id="exercises" name='exercises' type="text">
+                <label for="Exercises" class="active">Exercises</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input placeholder="https://youtube.sfbwkufbu" id="vidDescription" name='vidDescription' type="text">
+                <label for="description" class="active">Link to Video of Exercise</label>
+            </div>
+        </div>
+        <div class="row">
+            <p>
+            <label>
+                <input type="checkbox" class="filled-in"/>
+                <span>Is this a superset?</span>
+              </label>
+            </p>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit">Create New Exercise
+            <i class="material-icons right">add</i>
+        </button>            
+        </form>
+    </div>
+
+
+
+
+
+<%- include('../partials/footer.ejs') %> 

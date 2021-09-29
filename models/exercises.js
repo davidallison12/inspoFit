@@ -5,6 +5,7 @@ const exerciseSchema = new mongoose.Schema({
     sets: {type: String},
     reps: {type: String},
     equipment: [String],
+    vidDescription: {type: String},
     isSuperset: {type: Boolean, default: false}
 })
 

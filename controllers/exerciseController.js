@@ -16,6 +16,11 @@ router.get('/', (req, res) => {
     })
 })
 
+// New 
+router.get('/new', (req, res) => {
+    res.render('exercises/new.ejs')
+})
+
 
 // Show
 router.get('/:id', (req, res) => {
@@ -24,11 +29,6 @@ router.get('/:id', (req, res) => {
     })
 })
 
-
-// New 
-router.get('/new', (req, res) => {
-    res.send('This is the new route.')
-})
 
 router.post('/', (req, res) => {
     Exercise.create(req.body, (err, createdExercise) => {
