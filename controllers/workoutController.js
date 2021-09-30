@@ -18,7 +18,10 @@ router.get('/new', (req, res) => {
 
 router.post('/', (req, res) => {
     Workout.create(req.body, (err, createdWorkout) => {
-        err ? res.send(err): res.redirect('/workouts')
+        if(err) {
+            return console.log(err)
+        }
+        res.redirect('/workouts')
     })
 })
 
