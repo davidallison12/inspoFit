@@ -2,7 +2,7 @@
 <h1>THIS IS THE EXERCISE INDEX ROUTE</h1>
 
 <% exercises.forEach(exercise => { %>
-<h1><%= exercise.name %> </h1>
+<h1><a href="/exercises/<%= exercise.id %> "><%= exercise.name %></a></h1>
 <% }) %> 
 
 

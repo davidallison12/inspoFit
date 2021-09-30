@@ -69,8 +69,9 @@ router.get('/:id', (req, res) => {
 
 
 router.post('/', (req, res) => {
+    req.body.isSuperset === "on" ? req.body.isSuperset = true : req.body.isSuperset = false
     Exercise.create(req.body, (err, createdExercise) => {
-        err ? console.log(err) : console.log('You hit the post route.')
+        err ? console.log(err) : res.redirect(`/exercises`)
     })
 })
 
@@ -78,12 +79,25 @@ router.post('/', (req, res) => {
 // Edit
 router.get('/:id/edit', (req, res) => {
     Exercise.findById(req.params.id, (err, foundExercise) => {
-        res.send('This is the exercise edit route.')
+        res.render('exercises/edit.ejs', {exercise: foundExercise})
+    })
+})
+
+router.put('/:id', (req, res) => {
+    req.body.isSuperset === "on" ? req.body.isSuperset = true : req.body.isSuperset = false
+    Exercise.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, foundExercise) => {
+        err ? console.log(err) : res.redirect(`/exercises`)
     })
 })
 
 
 // Delete
+router.get('/:id', (req, res) => {
+    Exercise.findByIdAndDelete(req.params.id, (err, foundExercise) => {
+        err ? console.log(err) : res.redirect('/exercises')
+    })
+})
+
 
 module.exports = router
 
