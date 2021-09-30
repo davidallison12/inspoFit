@@ -1,11 +1,11 @@
 <%- include('../partials/header.ejs') %> 
 
-<h1>This is the New Exercise page.</h1>
+<h1>Create A New Exercise</h1>
 
 <div class="row">
     <form class="col s12" action='/exercises' method="POST">
         <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s12">
                 <input placeholder="Workout Name" name="name" id="name" type="text" class="validate">
                 <label for="name" class="active" >Exercise Name</label>
             </div>
@@ -13,19 +13,17 @@
         <div class="row"> 
             <div class="input-field col s6">
                 <input placeholder="# of Sets" name="sets" id="sets" type="text" class="validate">
-                <label for="name" class="active" ># of Sets</label>
+                <label for="sets" class="active" ># of Sets</label>
             </div>
-        </div>
-        <div class="row">
             <div class="input-field col s6">
                 <input placeholder="# of Reps" name="reps" id="reps" type="text" class="validate">
-                <label for="name" class="active" ># of Reps</label>
+                <label for="reps" class="active" ># of Reps</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <input placeholder="Equipment" name="equipment" id="equipment" type="text" class="validate">
-                <label for="name" class="active" >Equipment</label>
+                <label for="equipment" class="active" >Equipment</label>
             </div>
         </div>
         <div class="row">

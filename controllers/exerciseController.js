@@ -62,8 +62,8 @@ router.get('/new', (req, res) => {
 
 // Show
 router.get('/:id', (req, res) => {
-    Exercise.find(req.params.id, (err, foundExercise) => {
-        res.send(foundExercise)
+    Exercise.findById(req.params.id, (err, foundExercise) => {
+        res.render('exercises/show.ejs', {exercise: foundExercise})
     })
 })
 

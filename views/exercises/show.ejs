@@ -1,8 +1,16 @@
 <%- include('../partials/header.ejs') %> 
 
+<h1><%= exercise.name %><a href="/exercises/<%= exercise.id %>/edit">(Edit)</a></h1>
+
+<div>
+    <h5>Equipment Needed:<span><%= exercise.equipment %></span></h5>
+    <h5>Video Desription: <a href="<%= exercise.vidDescription %>">Link</a></h5> 
+</div>
 
 
-
+<form action="/exercises/<%= exercise.id %>?_method=DELETE" method="POST">
+    <button class="waves-effect waves-light btn" type="submit"><i class="material-icons right">delete</i>button</button>
+</form>
 
 
 

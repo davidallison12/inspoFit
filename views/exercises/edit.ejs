@@ -3,7 +3,7 @@
 <h1>This is the Edit Exercise page.</h1>
 
 <div class="row">
-    <form class="col s12" action='/exercises' method="POST">
+    <form class="col s12" action='/exercises/<%= exercise.id %>?_method=PUT' method="POST">
         <div class="row">
             <div class="input-field col s6">
                 <input value="<%= exercise.name %>" name="name" id="name" type="text" class="validate">
@@ -37,7 +37,7 @@
         <div class="row">
             <p>
             <label>
-                <input type="checkbox" class="filled-in"
+                <input type="checkbox" class="filled-in" name="isSuperset"
                 <% if(exercise.isSuperset) { %>
                     checked
                 <% } %>
@@ -46,7 +46,7 @@
               </label>
             </p>
         </div>
-        <button class="btn waves-effect waves-light" type="submit">Create New Exercise
+        <button class="btn waves-effect waves-light" type="submit">Update Exercise
             <i class="material-icons right">edit</i>
         </button>            
         </form>
