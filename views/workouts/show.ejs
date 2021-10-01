@@ -1,28 +1,33 @@
 <%- include('../partials/header.ejs') %> 
+<div class="row">
+    <div class="col s3">
+    <h1><%= workout.name %> </h1>
+    <h3>Level: <span><%= workout.level.replace(workout.level[0], workout.level[0].toUpperCase()) %> </span></h3>
 
-<h1><%= workout.name %> </h1>
-<h3>Level: <span><%= workout.level.replace(workout.level[0], workout.level[0].toUpperCase()) %> </span></h3>
+    <h3>Bodyparts Used: </h3>
+    <ul>
+        <%workout.bodyparts.forEach(part => { %>
+            <li><%= part %> </li>
+            <% })  %> 
+    </ul>
 
-<h3>Bodyparts Used: </h3>
-<ul>
-    <%workout.bodyparts.forEach(part => { %>
-        <li><%= part %> </li>
-        <% })  %> 
-</ul>
+    <p><%= workout.description %> </p>
 
-<p><%= workout.description %> </p>
+    <p><%= workout.tips %> </p>
 
-<p><%= workout.tips %> </p>
+    <form action="/workouts/<%= workout.id %>?_method=DELETE" method="POST">
+        <button class="waves-effect waves-light btn-small"><i class="material-icons right">delete</i>Delete Workout</button>
+    </form>
+    
+    <a href="/workouts/<%= workout.id %>/edit "class="waves-effect waves-light btn-small"><i class="material-icons right">edit</i>Edit Workout</a>
 
-<form action="/workouts/<%= workout.id %>?_method=DELETE" method="POST">
-    <button class="waves-effect waves-light btn-small"><i class="material-icons right">delete</i>Delete Workout</button>
-</form>
+</div>    
 
-<a href="/workouts/<%= workout.id %>/edit "class="waves-effect waves-light btn-small"><i class="material-icons right">edit</i>Edit Workout</a>
-
-
-
-
-
+    <div class="col s9">
+        <% workout.exercises.forEach(exercise => { %>
+            <h5 class="center"><%= exercise.name %></h5>
+        <% }) %>     
+    </div>
+</div>
 
 <%- include('../partials/footer.ejs') %> 

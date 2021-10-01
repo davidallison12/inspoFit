@@ -3,7 +3,7 @@ const router = express.Router()
 
 // requiring Workouts models 
 const Workout = require('../models/workouts')
-
+const Exercise = require('../models/exercises')
 
 router.get('/', (req, res) => {
     Workout.find({}, (err, allWorkouts) => {
@@ -13,10 +13,21 @@ router.get('/', (req, res) => {
 
 // NEW ROUTE + POST FOR NEW
 router.get('/new', (req, res) => {
-    res.render('workouts/new.ejs')
+    Exercise.find({}, (err, foundExercises) => {
+        if (err) {
+            return console.log(err)
+        }
+        res.render('workouts/new.ejs', {exercises: foundExercises})
+    })
+   
 })
 
 router.post('/', (req, res) => {
+    console.log(req.body)
+    if(typeof req.body.exercises === "string") {
+        req.body.exercises = [req.body.exercises]
+    }
+
     Workout.create(req.body, (err, createdWorkout) => {
         if(err) {
             return console.log(err)
@@ -33,7 +44,15 @@ router.get('/seed', async (req, res) => {
         level: 'Beginner',
         bodyparts: ['chest, back'],
         numOfExercises: 5,
-        exercises: ['Bench Press', 'Lat Pulldown', 'Hammer Smith Incline Press', 'Pendlay Rows', 'Low-High Cable Flyes'],
+        exercises: [
+            '6153cffa2c709bf0068fcd0d',
+            '6154feb31dfab151bf6176b5',
+            '6154ff981dfab151bf6176b9',
+            '6154fff93e28c280d2952fd1',
+            '61550146087c6c564a26fc5e',
+            '615501afc9f9caf3dfea46bc',
+            '6155028fc9f9caf3dfea46c0'
+          ],
         description: 'Heavy compound movement day involving back and chest',
         tips: `Don't die` 
     }, {
@@ -41,7 +60,15 @@ router.get('/seed', async (req, res) => {
         level: 'Intermediate',
         bodyparts: ['shoulder, arms'],
         numOfExercises: 5,
-        exercises: ['Standing Shoulder Press', 'Standing Bicep Curls', 'Dumbbell Skullcrushers', 'Side Lateral Raise'],
+        exercises: [
+            '6153cffa2c709bf0068fcd0d',
+            '6154feb31dfab151bf6176b5',
+            '6154ff981dfab151bf6176b9',
+            '6154fff93e28c280d2952fd1',
+            '61550146087c6c564a26fc5e',
+            '615501afc9f9caf3dfea46bc',
+            '6155028fc9f9caf3dfea46c0'
+          ],
         description: 'Heavy compound movement day involving the gunz',
         tips: `Embrace the pain` 
     }, {
@@ -49,7 +76,15 @@ router.get('/seed', async (req, res) => {
         level: 'Intermediate',
         bodyparts: ['chest, back'],
         numOfExercises: 5,
-        exercises: ['Squats', 'Romanian Deadlifts', 'Box Squats', 'Deficit Squats', 'Suitcase Carries'],
+        exercises: [
+            '6153cffa2c709bf0068fcd0d',
+            '6154feb31dfab151bf6176b5',
+            '6154ff981dfab151bf6176b9',
+            '6154fff93e28c280d2952fd1',
+            '61550146087c6c564a26fc5e',
+            '615501afc9f9caf3dfea46bc',
+            '6155028fc9f9caf3dfea46c0'
+          ],
         description: 'Heavy compound movement day involving legs and core',
         tips: `Have fun...` 
     },{
@@ -57,7 +92,15 @@ router.get('/seed', async (req, res) => {
         level: 'Intermediate',
         bodyparts: ['shoulders, arms'],
         numOfExercises: 5,
-        exercises: ['Viking Press', 'Preacher Curl', 'Close-Grip Bench Press', 'Alternating Shoulder Press', 'Reverse Bicep Curls'],
+        exercises: [
+            '6153cffa2c709bf0068fcd0d',
+            '6154feb31dfab151bf6176b5',
+            '6154ff981dfab151bf6176b9',
+            '6154fff93e28c280d2952fd1',
+            '61550146087c6c564a26fc5e',
+            '615501afc9f9caf3dfea46bc',
+            '6155028fc9f9caf3dfea46c0'
+          ],
         description: 'Heavy compound movement day involving shoulders and arms. Prepare to show those god-like arms.',
         tips: `Let your inner Viking come roar` 
     }
@@ -74,9 +117,19 @@ router.get('/seed', async (req, res) => {
 // SHOW ROUTE
 router.get('/:id', (req, res) => {
 
-    Workout.findById(req.params.id, (err, foundWorkout) => {
+    Workout.findById(req.params.id).populate('exercises').exec((err, foundWorkout) => {
+        if(err) {
+            console.log(err)
+        }
         res.render('workouts/show.ejs', {workout:foundWorkout})
     })
+
+    // Workout.findById(req.params.id, (err, foundWorkout) => {
+    //     if(err) {
+    //                  console.log(err)
+    //              }
+    //              res.render('workouts/show.ejs', {workout:foundWorkout})
+    // })
 })
 
 
