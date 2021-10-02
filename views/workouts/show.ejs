@@ -31,7 +31,7 @@
         <h3 class="center workout-title-right-show">Workout</h3>
         <% workout.exercises.forEach(exercise => { %>
             <div class="exercise-for-workout-show-container">
-                <h5 class="center col s12 exercise-name-workout-show"><%= exercise.name %></h5>
+                <h5 class="center col s12 exercise-name-workout-show"><a href="/exercises/<%= exercise.id %> "><%= exercise.name %></a></h5>
                 <div class="center">
                     <p class="col s6">Sets: <span><%= exercise.sets %> </span></p>
                     <p class="col s6">Reps: <span><%= exercise.reps %> </span></p>

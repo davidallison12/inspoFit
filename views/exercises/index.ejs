@@ -1,8 +1,8 @@
 <%- include('../partials/header.ejs') %> 
-<h1>THIS IS THE EXERCISE INDEX ROUTE</h1>
+<h1>Exercise List</h1>
 
 <% exercises.forEach(exercise => { %>
-<h1><a href="/exercises/<%= exercise.id %> "><%= exercise.name %></a></h1>
+<h3><a href="/exercises/<%= exercise.id %> "><%= exercise.name %></a></h3>
 <% }) %> 
 
 

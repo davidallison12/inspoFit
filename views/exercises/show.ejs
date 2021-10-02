@@ -1,8 +1,8 @@
 <%- include('../partials/header.ejs') %> 
 
-<h1><%= exercise.name %><a href="/exercises/<%= exercise.id %>/edit">(Edit)</a></h1>
+<h2><%= exercise.name %><a href="/exercises/<%= exercise.id %>/edit">(Edit)</a></h2>
 
-<div>
+<div class="exercise-details-container">
     <h5>Equipment Needed:<span><%= exercise.equipment %></span></h5>
     <h5>Video Desription: <a href="<%= exercise.vidDescription %>">Link</a></h5> 
 </div>

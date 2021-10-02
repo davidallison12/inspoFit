@@ -65,6 +65,11 @@ div.col.s4.show-split-left {
     margin-top: 5vh;
 }
 
+/* EXERCISE SHOW */
+.exercise-details-container {
+    margin-bottom: 5vh;
+}
+
 /* BUTTONS */
 .edit {
     background-color: #01FDF6;
