@@ -30,7 +30,7 @@ router.post('/', (req, res) => {
 
     Workout.create(req.body, (err, createdWorkout) => {
         if(err) {
-            return console.log(err)
+            console.log(err)
         }
         res.redirect('/workouts')
     })
