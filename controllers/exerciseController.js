@@ -71,7 +71,10 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     req.body.isSuperset === "on" ? req.body.isSuperset = true : req.body.isSuperset = false
     Exercise.create(req.body, (err, createdExercise) => {
-        err ? console.log(err) : res.redirect(`/exercises`)
+        if(err) {
+           return console.log(err)
+        }
+        res.redirect(`/exercises`)
     })
 })
 
