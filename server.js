@@ -51,13 +51,16 @@ app.use(express.static('public')) // Public Folder Connection
 //=================
 // CONTROLLERS
 //=================
+
 const exerciseController = require('./controllers/exerciseController')
 app.use('/exercises', exerciseController)
 
 const workoutController = require('./controllers/workoutController')
 app.use('/workouts', workoutController)
 
-
+app.get('/', (req, res) => {
+    res.redirect('/workouts')
+})
 
 //=================
 // LISTENER
