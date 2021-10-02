@@ -1,4 +1,84 @@
+
+* {
+    margin: 0
+}
+
+nav{
+    background-color: #E5446D;
+}
+
+footer {
+    background-color: #279AF1;
+}
+
+.workout-name-show {
+    margin: 5vh 0 8vh 0;
+}
+.workout-title-right-show{
+    margin: 5vh 0 0vh 0;
+
+}
+.workout-tip {
+    font-style: italic;
+}
+.show-details-container {
+    margin-top: 15%;
+    
+}
+
+.show-button-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 8vh;
+}
+
+div.col.s4.show-split-left {
+    text-align: left;
+    padding-left: 5%;
+    height: 100vh;
+}
+
+.bodyparts-list-items {
+    font-size: 1em;
+    /* text-align: center; */
+    
+}
+.show-description {
+    margin-top: 15%;
+}
+
+
+.show-split-right {
+    /* background-color: #7209B7; */
+    height: 100vh;
+}
+
+.exercise-name-workout-show {
+    margin: 8vh 0 0 0;
+}
+
+
+/* WORKOUT INDEX */
 .workout-cards-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap:wrap-reverse;
+    margin-top: 5vh;
+}
+
+/* BUTTONS */
+.edit {
+    background-color: #01FDF6;
+    color: #575A5E;
+    margin: 0 5px
+}
+
+.delete {
+    background-color: #E5446D;
+    margin: 0 5px 0 0 
+
+}
+
+.submit-button {
+    background-color: #01FDF6;
+    color: #575A5E;
 }

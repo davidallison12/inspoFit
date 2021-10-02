@@ -44,14 +44,12 @@ router.get('/seed', async (req, res) => {
         level: 'Beginner',
         bodyparts: ['chest, back'],
         numOfExercises: 5,
-        exercises: [
-            '6153cffa2c709bf0068fcd0d',
-            '6154feb31dfab151bf6176b5',
-            '6154ff981dfab151bf6176b9',
-            '6154fff93e28c280d2952fd1',
-            '61550146087c6c564a26fc5e',
-            '615501afc9f9caf3dfea46bc',
-            '6155028fc9f9caf3dfea46c0'
+        exercises:  [
+            '6156506751e5e66575195d26',
+            '6156506751e5e66575195d29',
+            '615650d351e5e66575195d2f',
+            '615650fa51e5e66575195d32',
+            '6156515051e5e66575195d35'
           ],
         description: 'Heavy compound movement day involving back and chest',
         tips: `Don't die` 
@@ -60,14 +58,12 @@ router.get('/seed', async (req, res) => {
         level: 'Intermediate',
         bodyparts: ['shoulder, arms'],
         numOfExercises: 5,
-        exercises: [
-            '6153cffa2c709bf0068fcd0d',
-            '6154feb31dfab151bf6176b5',
-            '6154ff981dfab151bf6176b9',
-            '6154fff93e28c280d2952fd1',
-            '61550146087c6c564a26fc5e',
-            '615501afc9f9caf3dfea46bc',
-            '6155028fc9f9caf3dfea46c0'
+        exercises:  [
+            '6156506751e5e66575195d26',
+            '6156506751e5e66575195d29',
+            '615650d351e5e66575195d2f',
+            '615650fa51e5e66575195d32',
+            '6156515051e5e66575195d35'
           ],
         description: 'Heavy compound movement day involving the gunz',
         tips: `Embrace the pain` 
@@ -76,14 +72,12 @@ router.get('/seed', async (req, res) => {
         level: 'Intermediate',
         bodyparts: ['chest, back'],
         numOfExercises: 5,
-        exercises: [
-            '6153cffa2c709bf0068fcd0d',
-            '6154feb31dfab151bf6176b5',
-            '6154ff981dfab151bf6176b9',
-            '6154fff93e28c280d2952fd1',
-            '61550146087c6c564a26fc5e',
-            '615501afc9f9caf3dfea46bc',
-            '6155028fc9f9caf3dfea46c0'
+        exercises:  [
+            '6156506751e5e66575195d26',
+            '6156506751e5e66575195d29',
+            '615650d351e5e66575195d2f',
+            '615650fa51e5e66575195d32',
+            '6156515051e5e66575195d35'
           ],
         description: 'Heavy compound movement day involving legs and core',
         tips: `Have fun...` 
@@ -92,14 +86,12 @@ router.get('/seed', async (req, res) => {
         level: 'Intermediate',
         bodyparts: ['shoulders, arms'],
         numOfExercises: 5,
-        exercises: [
-            '6153cffa2c709bf0068fcd0d',
-            '6154feb31dfab151bf6176b5',
-            '6154ff981dfab151bf6176b9',
-            '6154fff93e28c280d2952fd1',
-            '61550146087c6c564a26fc5e',
-            '615501afc9f9caf3dfea46bc',
-            '6155028fc9f9caf3dfea46c0'
+        exercises:  [
+            '6156506751e5e66575195d26',
+            '6156506751e5e66575195d29',
+            '615650d351e5e66575195d2f',
+            '615650fa51e5e66575195d32',
+            '6156515051e5e66575195d35'
           ],
         description: 'Heavy compound movement day involving shoulders and arms. Prepare to show those god-like arms.',
         tips: `Let your inner Viking come roar` 
