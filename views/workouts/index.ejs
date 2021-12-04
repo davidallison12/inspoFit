@@ -1,11 +1,13 @@
 <%- include('../partials/header.ejs') %> 
 
+<% const images = ['/images/damir-spanic-3fmQEhzIi44-unsplash.jpg', '/images/damir-spanic-Cs73R4ZO50E-unsplash.jpg', '/images/logan-weaver-u76Gd0hP5w4-unsplash.jpg', '/images/nathan-dumlao-NXMZxygMw8o-unsplash.jpg'] %> 
+
 <div class="row workout-cards-container ">
 <% workouts.forEach((workout, i) => { %>
     <div class="col s12 m3">
         <div class="card">
           <div class="card-image">
-            <img src="https://cdn.shopify.com/s/files/1/0232/0543/products/8.CreatineSquare_09e50c7c-3ec4-4e7e-b537-fa655ca46a20_500x.jpg?v=1625076712">
+            <img src=' <%= images[Math.floor(Math.random() * images.length)] %>' >
             <span class="card-title"><%= workout.name %> </span>
           </div>
           <div class="card-content">

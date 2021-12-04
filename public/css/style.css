@@ -65,6 +65,11 @@ div.col.s4.show-split-left {
     margin-top: 5vh;
 }
 
+.card .card-image .card-title {
+    color: #E5446D;
+    font-weight: bolder;
+}
+
 /* EXERCISE SHOW */
 .exercise-details-container {
     margin-bottom: 5vh;
